@@ -1,10 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return jsonify("Hello World!")
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template("index.html",
+                           title='Home')
+
 
 if __name__ == '__main__':
-     app.run(port=5555)
+    app.run(port=5555)
