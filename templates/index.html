@@ -1,8 +1,29 @@
 <html>
-  <head>
+<head>
+    <h1 style="text-align: center">Привет</h1>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
     <title>site</title>
-  </head>
-  <body>
-      <h1>Hello, {{user.nickname}}!</h1>
-  </body>
+    <div class="container">
+{% for item in range(91) %}
+    <div class="square"></div>
+{% endfor %}
+</div>
+
+</head>
+<body>
+<div style="display: flex; justify-content: center; align-items: center;">
+<button class="button-style" type="button" onclick="showForm();" id="button_login">Login</button>
+<button class="button-style" type="button" onclick="showForm();" id="button_registration">Registration</button>
+    </div>
+<div id="login_form" style="display: none;">
+    <form>
+        <input type="text" placeholder="Username" id="username">
+        <input type="password" placeholder="Password"  id="password">
+        <button class="button-confirm" type="submit" id="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+<script src="static/skript.js"></script>
+
 </html>

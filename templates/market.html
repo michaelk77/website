@@ -1,0 +1,18 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>Market</title>
+</head>
+<body>
+<h1 style="text-align: center">Products</h1>
+{% for item in range(len) %}
+    <div class="square">
+        <h1 class="square-text">{{products[item][0]}}</h1>
+        <h2 class="square-coast">{{products[item][1]}}$</h2>
+    </div>
+
+{% endfor %}
+</body>
+<script src="static/market.js"></script>
+
+</html>
