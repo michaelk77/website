@@ -4,14 +4,23 @@
     <title>Market</title>
 </head>
 <body>
-<h1 style="text-align: center">Products</h1>
-{% for item in range(len) %}
-    <div class="square">
-        <h1 class="square-text">{{products[item][0]}}</h1>
-        <h2 class="square-coast">{{products[item][1]}}$</h2>
-    </div>
 
-{% endfor %}
+
+<div class="row_names">
+    <h1 style="font-size: 150%" id="text_button_category">Categories</h1>
+    <h1 style="font-size: 150%;">Products</h1>
+    <h1 style="font-size: 150%" id="text_button_prof">Profile</h1>
+</div>
+<div class="row">
+    {% for item in range(len) %}
+    <div class="square_product">
+        <h2 class="square-text" style="font-size: 90%;">{{products[item][0]}}</h2>
+        <h3 class="square-coast" style="font-size: 80%;">{{products[item][1]}}$</h3>
+        <img class="rect-img" src="static/photos/{{item}}.jpg">
+    </div>
+    {% endfor %}
+</div>
+<button id="theme-switch-button">Switch Theme</button>
 </body>
 <script src="static/market.js"></script>
 

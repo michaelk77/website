@@ -12,9 +12,9 @@ def index():
 
 @app.route('/market')
 def test():
-    products = {0: ["iphone 14", "1000"], 1: ["macbook", "2000"]}
+    products = {0: ["iphone 14", "1000"], 1: ["macbook", "2000"], 2: ["oneplus 10 pro", "880"], 3:["xiaomi mi 11 ultra","1200"],4:["asus zenbook 14","1400"]}
     return render_template("market.html",
-                           title='Market',products=products,len=len(products))
+                           title='Market', products=products, len=len(products))
 
 
 @app.route("/login", methods=["POST"])

@@ -12,6 +12,36 @@ function animateSquares() {
 
 }
 
+const squares = document.querySelectorAll(".square_product");
+squares.forEach((square)=>{
+    square.addEventListener("mouseover", function() {
+      square.style.transform = "scale(1.2)";
+    });
+
+    square.addEventListener("mouseout", function() {
+      square.style.transform = "scale(1)";
+      })
+});
 
 
 
+
+const button = document.getElementById("theme-switch-button");
+let currentTheme = "dark";
+
+
+button.addEventListener("click", function() {
+  if (currentTheme === "light") {
+    button.style.backgroundColor = "#333";
+    button.style.color = "#fff";
+    currentTheme = "dark";
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#333";
+  } else {
+    document.body.style.backgroundColor = "#333";
+    document.body.style.color = "#fff";
+    button.style.backgroundColor = "#fff";
+    button.style.color = "#333";
+    currentTheme = "light";
+  }
+});
