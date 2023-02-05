@@ -1,6 +1,14 @@
+import sqlalchemy
 from flask import Flask, jsonify, render_template, request
+from sqlalchemy import MetaData, Table, Integer, String, \
+    Column, select, update, Boolean
+from sqlalchemy.orm import sessionmaker
+
+from models import Item
 
 app = Flask(__name__)
+engine = sqlalchemy.create_engine('sqlite:///webmarkt.db')
+metadata = MetaData()
 
 
 @app.route('/')
@@ -12,9 +20,19 @@ def index():
 
 @app.route('/market')
 def test():
-    products = {0: ["iphone 14", "1000"], 1: ["macbook", "2000"], 2: ["oneplus 10 pro", "880"], 3:["xiaomi mi 11 ultra","1200"],4:["asus zenbook 14","1400"]}
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    items = session.query(Item).all()
+    dict_to_js = {}
+    i = 0
+    for item in items:
+        dict_to_js[i] = [item.name, item.price]
+        i += 1
+    print(dict_to_js)
+    session.commit()
     return render_template("market.html",
-                           title='Market', products=products, len=len(products))
+                           title='Market', products=dict_to_js, len=len(dict_to_js))
 
 
 @app.route("/login", methods=["POST"])
