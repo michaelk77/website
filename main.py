@@ -27,7 +27,7 @@ def test():
     dict_to_js = {}
     i = 0
     for item in items:
-        dict_to_js[i] = [item.name, item.price]
+        dict_to_js[i] = [item.name, item.price, item.overinfo]
         i += 1
     print(dict_to_js)
     session.commit()

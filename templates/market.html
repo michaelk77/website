@@ -13,11 +13,15 @@
 </div>
 <div class="row">
     {% for item in range(len) %}
-    <div class="square_product">
-        <h2 class="square-text" style="font-size: 90%;">{{products[item][0]}}</h2>
+    <div class="square_product" id="{{item}}">
+        <img class="rect-img" id="img{{item}}" src="static/photos/{{item}}.jpg">
+        <div class="text-block" id="text{{item}}" style="display: none; font-size: 80%;">{{products[item][2]}}</div>
+        <h2 class="square-text" style="font-size: 95%;">{{products[item][0]}}</h2>
         <h3 class="square-coast" style="font-size: 80%;">{{products[item][1]}}$</h3>
-        <img class="rect-img" src="static/photos/{{item}}.jpg">
+
     </div>
+
+
     {% endfor %}
 </div>
 <button id="theme-switch-button">Switch Theme</button>

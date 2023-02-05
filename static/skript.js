@@ -21,6 +21,11 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+function guest_login() {
+  window.location.href = "/market";
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const loginForm = document.getElementById("login_form");
   const form = loginForm.querySelector("form");
