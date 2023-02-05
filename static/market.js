@@ -21,7 +21,7 @@ squares.forEach((square)=>{
 
     square.addEventListener("mouseout", function() {
       square.style.transform = "scale(1)";
-      })
+      });
 });
 
 
@@ -56,8 +56,8 @@ square.addEventListener("click", function() {
 
 
 
-
 document.addEventListener("click", function(event) {
+
   if (!square.contains(event.target)) {
     const rectImg = document.getElementById(`img${square.id}`);
     const textBlock = document.getElementById(`text${square.id}`);
@@ -69,6 +69,18 @@ document.addEventListener("click", function(event) {
 
 }});
 });
+
+const profile = document.getElementById("text_button_prof");
+
+profile.addEventListener("click", function() {
+
+  window.location.href = "/profile";
+  })
+
+
+
+
+
 
 const button = document.getElementById("theme-switch-button");
 let currentTheme = "dark";

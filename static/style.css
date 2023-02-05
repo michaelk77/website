@@ -153,7 +153,6 @@ input[type="text"], input[type="password"] {
 
 #text_button_category:hover {
     cursor: pointer;
-    background-color: white;
     color: blue;
 
   }
@@ -163,6 +162,10 @@ input[type="text"], input[type="password"] {
     color: blue;
   }
 
+#text_button_products:hover {
+    cursor: pointer;
+    color: blue;
+  }
 
 button#theme-switch-button {
   background-color: #333;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <div class="container">
+        {% for item in range(91) %}
+        <div class="square"></div>
+        {% endfor %}
+    </div>
+
+
+</head>
+<body>
+<div class="row_names">
+<h1 style="font-size: 150%" id="text_button_category">Categories</h1>
+<h1 style="font-size: 150%" id="text_button_products">Products</h1>
+</div>
+<h1 id="userinfo">Your now information:</h1>
+
+<form id="profile_form">
+    <label>
+        <h1>email:</h1>
+        <input type="text" name="email">
+    </label>
+    <br>
+    <label>
+        <h1>Address and phone:</h1>
+        <input type="text" name="address">
+    </label>
+    <br>
+    <button class="button-confirm" type="submit">Save</button>
+</form>
+</body>
+<script src="static/profile.js"></script>
+</html>
