@@ -1,9 +1,6 @@
-import base64
-
 import sqlalchemy
 from flask import Flask, jsonify, render_template, request
-from sqlalchemy import MetaData, Table, Integer, String, \
-    Column, select, update, Boolean
+from sqlalchemy import MetaData
 from sqlalchemy.orm import sessionmaker
 import jwt
 from models import Item, User
@@ -12,7 +9,7 @@ app = Flask(__name__)
 engine = sqlalchemy.create_engine('sqlite:///webmarkt.db')
 metadata = MetaData()
 
-secret_key = "secretkey"  # Dont use it
+secret_key = "secretkey"  # Dont use it like it
 
 
 @app.route('/')
