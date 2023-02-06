@@ -99,11 +99,12 @@ def login():
     username = data.get("username")
     password = data.get("password")
     # Check the user's login credentials
-    if valid_login(username, password):
+    check=valid_login(username, password)
+    if check == True:
         token = jwt.encode({"username": username}, secret_key, algorithm="HS256")
         return jsonify({"token": token}), 200
     else:
-        return jsonify({"info": "Don`t success"}), 404
+        return jsonify({"error": "Password do not much"}), 400
 
 
 def valid_login(username: str, password: str):

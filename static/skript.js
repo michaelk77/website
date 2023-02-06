@@ -1,10 +1,3 @@
-window.addEventListener('scroll', scroling);
-
-
-function scroling(){
-    console.log(pageYOffset);
-}
-
 function showForm() {
   document.getElementById("login_form").style.display = "block";
 }
@@ -36,13 +29,25 @@ function login(username, password) {
       let response = JSON.parse(xhr.responseText);
       localStorage.setItem("token", response.token);
       window.location.href = "/market";
-      }
-    else {
+      } else if (xhr.status === 400){
+        const profile = document.getElementById("error");
+        let response = JSON.parse(xhr.responseText);
+        profile=`error: {response.error}`
+        console.error("Login failed:", xhr.responseText)
+    } else {
       console.error("Login failed:", xhr.responseText);
     }
+    }
+    else if (xhr.status === 400){
+        console.error("Login failed:", xhr.responseText);
+        const profile = document.getElementById("error");
+        let response = JSON.parse(xhr.responseText);
+        profile.innerHTML = `error: ${response.error}`;
+        profile.style.display="flex";
   }
 };
   xhr.send(JSON.stringify({ username: username, password: password }));
+
 }
 
 
@@ -54,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const username = document.getElementById("username");
   const password = document.getElementById("password");
   login(encodeURIComponent(username.value), encodeURIComponent(password.value));
+
 });
 });
 

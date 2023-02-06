@@ -18,14 +18,14 @@
 <button class="button-style" type="button" onclick="showForm();" id="button_registration">Registration</button>
 <button class="button-style" type="button" onclick="guest_login();" id="button_guest">Guest</button>
     </div>
-<div id="login_form" style="display: none;">
+<div id="login_form" onsubmit="return false;" style="display: none;">
     <form>
         <input type="text" placeholder="Username" id="username">
         <input type="password" placeholder="Password"  id="password">
         <button class="button-confirm" type="submit" id="submit">Submit</button>
     </form>
 </div>
-
+<div class="text-block" id="error" style="display: none; font-size: 200%; justify-content: center; "></div>
 </body>
 <script src="static/skript.js"></script>
 
