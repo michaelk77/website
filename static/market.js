@@ -1,16 +1,19 @@
-function animateSquares() {
-   console.log(document.cookie.indexOf("anim_redirect=True"))
-  // Perform the animation
-
-  const squares = document.querySelectorAll('.square');
-
-  squares.forEach(square => {
-    square.style.transition = "all 2s ease-out";
-    square.style.transform = "scale(0.2) translateY(300%)";
-    square.style.opacity = "0";
-  });
-
-}
+var currentTheme = "dark";
+document.addEventListener("DOMContentLoaded", function() {
+  if (localStorage.getItem("theme") === "black") {
+    document.body.transition= "";
+    document.body.style.backgroundColor = "#333";
+    document.body.style.color = "#fff";
+    button.style.backgroundColor = "#fff";
+    button.style.color = "#333";
+    currentTheme = "light";
+    var currentTheme = "white";
+    document.body.transition= "background-color 300ms;";
+  }
+  else{
+  var currentTheme = "dark";
+  }
+});
 
 const squares = document.querySelectorAll(".square_product");
 squares.forEach((square)=>{
@@ -83,7 +86,6 @@ profile.addEventListener("click", function() {
 
 
 const button = document.getElementById("theme-switch-button");
-let currentTheme = "dark";
 
 
 button.addEventListener("click", function() {
@@ -93,11 +95,14 @@ button.addEventListener("click", function() {
     currentTheme = "dark";
     document.body.style.backgroundColor = "#fff";
     document.body.style.color = "#333";
+    localStorage.setItem("theme", "white");
   } else {
     document.body.style.backgroundColor = "#333";
     document.body.style.color = "#fff";
     button.style.backgroundColor = "#fff";
     button.style.color = "#333";
     currentTheme = "light";
+    localStorage.setItem("theme", "black");
   }
 });
+
