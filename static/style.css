@@ -13,6 +13,11 @@ body{
     font-size: 2vh;
 }
 
+
+
+
+
+
 input[type="text"], input[type="password"] {
   border-radius: 30px;
   font-size: 20px;
@@ -127,6 +132,7 @@ input[type="text"], input[type="password"] {
         min-height: 22vh;
         height: 22vh;
         border-radius: 3vh;
+        margin-min: 3vh;
       }
 
 
@@ -168,24 +174,38 @@ input[type="text"], input[type="password"] {
   }
 
 button#theme-switch-button {
+  height:5vh;
+  width:10vh;
   background-color: #333;
   color: #fff;
-  padding: 0.5vh 0.5vw;
+  text-align: center;
   border: none;
   cursor: pointer;
   border-radius: 1.2vh;
-  position: absolute;
-  bottom: 1vh;
-  right: 1vw;
   transition: transform 0.3s ease;
 }
+
+
+#text_button_cart {
+  height:5vh;
+  width:10vh;`
+  border: none;
+  border-radius: 1.2vh;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
 
 #text-block {
     display: none;/* hide the block by default */
     background-color: #F2F2F2;
-    padding: 10px;
-    border: 1px solid #333;
-    font-size: 80%;
+    padding: 1vh;
+    border: 1vh solid #333;
+    font-size: 2vh;
 
 }
 

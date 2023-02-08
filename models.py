@@ -13,6 +13,7 @@ class User(Base):
     overinfo=Column(String)
     adress=Column(String)
     history_of_shop=Column(String)
+    #cart=Column(String)
 
 
 class Item(Base):

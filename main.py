@@ -12,6 +12,15 @@ metadata = MetaData()
 secret_key = "secretkey"  # Dont use it like it
 
 
+
+
+
+@app.route("/cart", methods=["GET"])
+def get_cart():
+    return render_template("cart.html")
+
+
+
 @app.route('/')
 @app.route('/index')
 def index():
